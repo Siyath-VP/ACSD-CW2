@@ -1,0 +1,231 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sidebar Styling */
+.search-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.visible {
+  transform: "translateX(0)";
+}
+
+.search-section.visible {
+  transform: translateX(0);
+}
+
+.search-section h2 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.search-section input,
+.search-section select,
+.search-section button {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.search-section button {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background: #0056b3;
+}
+
+.search-section .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 2rem; /* Space below hero section */
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Flexible grid for cards */
+  gap: 1.5rem; /* Spacing between cards */
+  justify-content: center; /* Center-align cards */
+}
+
+/* Property Card Styling */
+.property-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Restrict image height */
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.property-card h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.property-card p {
+  margin: 0.5rem 0;
+}
+
+.property-card button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.property-card button:hover {
+  background: #0056b3;
+}
+
+/* Favorites Section */
+.favorites-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.favorites-section h3 {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.favorites-list {
+  min-height: 100px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* Drag-and-Drop Area */
+.drag-area {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fdf1f1;
+  border: 2px dashed #dc3545;
+  border-radius: 5px;
+  text-align: center;
+  color: #dc3545;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+}
+
+/* Hero Section (for the welcome message) */
+.hero-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  /* background: url('./c0cf7472da8dd51db46dcc4339c8f421.jpg') no-repeat center center/cover; */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-section {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .search-section {
+    width: 100%;
+  }
+}
