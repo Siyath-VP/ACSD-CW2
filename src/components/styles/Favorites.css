@@ -1,0 +1,23 @@
+.favorites-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .favorite-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .favorite-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
