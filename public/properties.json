@@ -1,0 +1,94 @@
+[
+    {
+      "id": 1,
+      "type": "house",
+      "price": 500000,
+      "bedrooms": 3,
+      "dateAdded": "2024-09-10",
+      "postcode": "BR1",
+      "shortDescription": "A lovely 3 bedroom house in BR1 area.",
+      "longDescription": "A spacious 3 bedroom semi-detached house with a large garden, close to local amenities.",
+      "images": ["property1_1.jpg", "property1_2.jpg", "property1_3.jpg", "property1_4.jpg", "property1_5.jpg", "property1_6.jpg"],
+      "floorPlanImage": "floorplan1.png",
+      "coordinates": {"lat": 51.407431, "lng": 0.021230}
+    },
+    {
+      "id": 2,
+      "type": "flat",
+      "price": 300000,
+      "bedrooms": 2,
+      "dateAdded": "2024-09-20",
+      "postcode": "NW1",
+      "shortDescription": "Modern 2 bedroom flat in NW1.",
+      "longDescription": "A chic 2 bedroom flat near the city center, excellent transport links.",
+      "images": ["property2_1.jpg", "property2_2.jpg", "property2_3.jpg", "property2_4.jpg", "property2_5.jpg", "property2_6.jpg"],
+      "floorPlanImage": "floorplan2.png",
+      "coordinates": {"lat": 51.529163, "lng": -0.125500}
+    },
+    {
+      "id": 3,
+      "type": "house",
+      "price": 750000,
+      "bedrooms": 4,
+      "dateAdded": "2024-08-15",
+      "postcode": "BR1",
+      "shortDescription": "Spacious 4 bedroom house in BR1.",
+      "longDescription": "A large 4 bedroom detached house with garage and garden.",
+      "images": ["property3_1.jpg", "property3_2.jpg", "property3_3.jpg", "property3_4.jpg", "property3_5.jpg", "property3_6.jpg"],
+      "floorPlanImage": "floorplan3.png",
+      "coordinates": {"lat": 51.408000, "lng": 0.022000}
+    },
+    {
+      "id": 4,
+      "type": "flat",
+      "price": 200000,
+      "bedrooms": 1,
+      "dateAdded": "2024-10-01",
+      "postcode": "NW1",
+      "shortDescription": "Affordable 1 bedroom flat in NW1.",
+      "longDescription": "A compact but well-located 1 bedroom flat, perfect for first-time buyers.",
+      "images": ["property4_1.jpg", "property4_2.jpg", "property4_3.jpg", "property4_4.jpg", "property4_5.jpg", "property4_6.jpg"],
+      "floorPlanImage": "floorplan4.png",
+      "coordinates": {"lat": 51.530000, "lng": -0.120000}
+    },
+    {
+      "id": 5,
+      "type": "house",
+      "price": 1000000,
+      "bedrooms": 5,
+      "dateAdded": "2024-07-01",
+      "postcode": "BR1",
+      "shortDescription": "Luxury 5 bedroom house in BR1.",
+      "longDescription": "An elegant 5 bedroom mansion with extensive grounds.",
+      "images": ["property5_1.jpg", "property5_2.jpg", "property5_3.jpg", "property5_4.jpg", "property5_5.jpg", "property5_6.jpg"],
+      "floorPlanImage": "floorplan5.png",
+      "coordinates": {"lat": 51.410000, "lng": 0.020000}
+    },
+    {
+      "id": 6,
+      "type": "flat",
+      "price": 450000,
+      "bedrooms": 2,
+      "dateAdded": "2024-09-25",
+      "postcode": "NW1",
+      "shortDescription": "Bright 2 bedroom flat in NW1.",
+      "longDescription": "A bright and airy flat, recently renovated.",
+      "images": ["property6_1.jpg", "property6_2.jpg", "property6_3.jpg", "property6_4.jpg", "property6_5.jpg", "property6_6.jpg"],
+      "floorPlanImage": "floorplan6.png",
+      "coordinates": {"lat": 51.528500, "lng": -0.130000}
+    },
+    {
+      "id": 7,
+      "type": "house",
+      "price": 600000,
+      "bedrooms": 3,
+      "dateAdded": "2024-09-30",
+      "postcode": "BR1",
+      "shortDescription": "Newly refurbished 3 bedroom house in BR1.",
+      "longDescription": "A newly refurbished house with modern interiors and close to schools.",
+      "images": ["property7_1.jpg", "property7_2.jpg", "property7_3.jpg", "property7_4.jpg", "property7_5.jpg", "property7_6.jpg"],
+      "floorPlanImage": "floorplan7.png",
+      "coordinates": {"lat": 51.407900, "lng": 0.023500}
+    }
+  ]
+  
