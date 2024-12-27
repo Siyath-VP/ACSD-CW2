@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .search-form-container,
+    .results-container,
+    .property-details-container {
+      padding: 1rem;
+    }
+  
+    .results-grid,
+    .favorites-grid {
+      grid-template-columns: 1fr;
+    }
+  }  
