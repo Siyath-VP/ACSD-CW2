@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import propertiesData from '../data/properties.json';
+// import propertiesData from '../../public/properties.json';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
@@ -9,10 +9,20 @@ export default function PropertyDetails() {
   const [property, setProperty] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    const p = propertiesData.find(pr => pr.id === parseInt(id));
-    setProperty(p);
-  }, [id]);
+  // useEffect(() => {
+  //   const p = propertiesData.find(pr => pr.id === parseInt(id));
+  //   setProperty(p);
+  // }, [id]);
+
+  // - import propertiesData from '../../public/properties.json';
+useEffect(() => {
+  fetch('/properties.json')
+    .then(res => res.json())
+    .then(data => {
+      const p = data.find(pr => pr.id === parseInt(id));
+      setProperty(p);
+    });
+}, [id]);
 
   if (!property) return <div>Loading...</div>;
 
