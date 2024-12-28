@@ -1,27 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./styles/PropertyCard.css"; // New styles file for better organization
 
-export default function PropertyCard({ property, addFavourite }) {
-  const handleAddFavourite = () => {
-    addFavourite(property);
-  };
+const PropertyCard = ({ property, addFavourite }) => {
+    return (
+        <div className="property-card-container">
+            <div className="property-image-container">
+                <img
+                    src={property.picture}
+                    alt={property.description}
+                    className="property-image"
+                />
+            </div>
+            <div className="property-info">
+                <h3 className="property-title">{property.description}</h3>
+                <p className="property-location">{property.location}</p>
+                <p className="property-price">£{property.price.toLocaleString()}</p>
+                <p className="property-details">{property.bedrooms} Bedrooms</p>
+                <div className="property-actions">
+                    <Link to={`/property/${property.id}`} className="details-link">
+                        View Details
+                    </Link>
+                    <button
+                        className="favourite-button"
+                        onClick={() => addFavourite(property)}
+                    >
+                        ❤ Favourite
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-  return (
-    <div className="property-card"
-      draggable={true}
-      onDragStart={(e) => {
-        e.dataTransfer.setData('text/plain', JSON.stringify(property));
-      }}>
-      <img src={`./images/${property.images[0]}`} alt="Property" />
-      <div className="info">
-        <h3>{property.shortDescription}</h3>
-        <p>Price: £{property.price}</p>
-        <p>Bedrooms: {property.bedrooms}</p>
-        <p>Type: {property.type}</p>
-        <p>Postcode: {property.postcode}</p>
-        <Link to={`/property/${property.id}`}>View Details</Link>
-        <button onClick={handleAddFavourite}>♥ Favourite</button>
-      </div>
-    </div>
-  );
-}
+export default PropertyCard;
