@@ -95,3 +95,18 @@
 .favourite-button:hover {
     background: #e84142;
 }
+
+.remove-button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.remove-button:hover {
+    background: #e84142;
+}
