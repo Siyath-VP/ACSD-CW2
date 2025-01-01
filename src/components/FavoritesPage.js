@@ -1,40 +1,24 @@
-import React, { useState, useEffect } from "react";
-import FavoritesList from "./FavoritesList";
+import React from "react";
+import PropertyCard from "./PropertyCard";
+import "./styles/FavoritesPage.css";
 
-const FavoritesPage = () => {
-    const [favourites, setFavourites] = useState([]);
-
-    useEffect(() => {
-        const saved = localStorage.getItem("favourites");
-        if (saved) {
-            setFavourites(JSON.parse(saved));
-        }
-    }, []);
-
-    const removeFavourite = (id) => {
-        const updated = favourites.filter((f) => f.id !== id);
-        setFavourites(updated);
-        localStorage.setItem("favourites", JSON.stringify(updated));
-    };
-
-    const clearFavourites = () => {
-        setFavourites([]);
-        localStorage.setItem("favourites", "[]");
-    };
-
+const FavoritesPage = ({ favourites, removeFavourite }) => {
     return (
-        <div
-            style={{
-                padding: "2rem",
-                minHeight: "calc(100vh - 6rem)", // Adjust for navbar and footer
-            }}
-        >
-            <h2>Favorites</h2>
-            <FavoritesList
-                favourites={favourites}
-                removeFavourite={removeFavourite}
-                clearFavourites={clearFavourites}
-            />
+        <div className="favorites-page-container">
+            <h2>My Favourites</h2>
+            <div className="favorites-list">
+                {favourites.length > 0 ? (
+                    favourites.map((property) => (
+                        <PropertyCard
+                            key={property.id}
+                            property={property}
+                            removeFavourite={removeFavourite} // Pass removeFavourite
+                        />
+                    ))
+                ) : (
+                    <p>No favourites added yet.</p>
+                )}
+            </div>
         </div>
     );
 };

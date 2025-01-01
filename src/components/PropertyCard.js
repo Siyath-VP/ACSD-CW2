@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles/PropertyCard.css"; // New styles file for better organization
+import "./styles/PropertyCard.css";
 
-const PropertyCard = ({ property, addFavourite }) => {
+const PropertyCard = ({ property, addFavourite, removeFavourite }) => {
+    const handleDragStart = (e) => {
+        e.dataTransfer.setData("text/plain", JSON.stringify(property));
+    };
+
     return (
-        <div className="property-card-container">
+        <div
+            className="property-card-container"
+            draggable={addFavourite ? true : false} // Enable dragging only if addFavourite is passed
+            onDragStart={addFavourite ? handleDragStart : undefined}
+        >
             <div className="property-image-container">
                 <img
                     src={property.picture}
@@ -21,12 +29,22 @@ const PropertyCard = ({ property, addFavourite }) => {
                     <Link to={`/property/${property.id}`} className="details-link">
                         View Details
                     </Link>
-                    <button
-                        className="favourite-button"
-                        onClick={() => addFavourite(property)}
-                    >
-                        ❤ Favourite
-                    </button>
+                    {addFavourite && (
+                        <button
+                            className="favourite-button"
+                            onClick={() => addFavourite(property)}
+                        >
+                            ❤ Favourite
+                        </button>
+                    )}
+                    {removeFavourite && (
+                        <button
+                            className="remove-button"
+                            onClick={() => removeFavourite(property.id)}
+                        >
+                            ✖ Remove
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
