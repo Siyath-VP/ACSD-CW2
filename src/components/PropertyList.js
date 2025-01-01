@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropertyCard from "./PropertyCard";
-import "./styles/PropertyList.css"; // Optional for additional layout styles
+import "./styles/PropertyList.css";
 
 export default function PropertyList({ criteria, addFavourite }) {
   const [filtered, setFiltered] = useState([]);
@@ -70,6 +70,13 @@ export default function PropertyList({ criteria, addFavourite }) {
                 key={property.id}
                 property={property}
                 addFavourite={addFavourite}
+                draggable // Makes the card draggable
+                onDragStart={(e) =>
+                    e.dataTransfer.setData(
+                        "text/plain",
+                        JSON.stringify(property)
+                    )
+                }
             />
         ))}
       </div>
