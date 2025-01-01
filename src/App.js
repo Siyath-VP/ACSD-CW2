@@ -193,12 +193,13 @@ export default function App() {
                     element={
                         <FavoritesPage
                             favourites={favourites}
-                            removeFavourite={removeFavourite}
-                            clearFavourites={clearFavourites}
+                            removeFavourite={(id) => {
+                                removeFavourite(id); // Reuse the same function
+                            }}
                         />
                     }
                 />
-                <Route path="/property/:id" element={<PropertyDetails/>}/>
+                <Route path="/property/:id" element={<PropertyDetails />} />
             </Routes>
             <Footer/>
         </div>
