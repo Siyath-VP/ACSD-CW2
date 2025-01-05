@@ -1,94 +1,116 @@
-[
+{
+  "properties": [
     {
-      "id": 1,
-      "type": "house",
-      "price": 500000,
+      "id": "prop1",
+      "type": "House",
       "bedrooms": 3,
-      "dateAdded": "2024-09-10",
-      "postcode": "BR1",
-      "shortDescription": "A lovely 3 bedroom house in BR1 area.",
-      "longDescription": "A spacious 3 bedroom semi-detached house with a large garden, close to local amenities.",
-      "images": ["property1_1.jpg", "property1_2.jpg", "property1_3.jpg", "property1_4.jpg", "property1_5.jpg", "property1_6.jpg"],
-      "floorPlanImage": "floorplan1.png",
-      "coordinates": {"lat": 51.407431, "lng": 0.021230}
-    },
-    {
-      "id": 2,
-      "type": "flat",
-      "price": 300000,
-      "bedrooms": 2,
-      "dateAdded": "2024-09-20",
-      "postcode": "NW1",
-      "shortDescription": "Modern 2 bedroom flat in NW1.",
-      "longDescription": "A chic 2 bedroom flat near the city center, excellent transport links.",
-      "images": ["property2_1.jpg", "property2_2.jpg", "property2_3.jpg", "property2_4.jpg", "property2_5.jpg", "property2_6.jpg"],
-      "floorPlanImage": "floorplan2.png",
-      "coordinates": {"lat": 51.529163, "lng": -0.125500}
-    },
-    {
-      "id": 3,
-      "type": "house",
       "price": 750000,
-      "bedrooms": 4,
-      "dateAdded": "2024-08-15",
-      "postcode": "BR1",
-      "shortDescription": "Spacious 4 bedroom house in BR1.",
-      "longDescription": "A large 4 bedroom detached house with garage and garden.",
-      "images": ["property3_1.jpg", "property3_2.jpg", "property3_3.jpg", "property3_4.jpg", "property3_5.jpg", "property3_6.jpg"],
-      "floorPlanImage": "floorplan3.png",
-      "coordinates": {"lat": 51.408000, "lng": 0.022000}
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "/images/prop1/main.jpg",
+      "url": "properties/prop1.html",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      }
     },
     {
-      "id": 4,
-      "type": "flat",
-      "price": 200000,
-      "bedrooms": 1,
-      "dateAdded": "2024-10-01",
-      "postcode": "NW1",
-      "shortDescription": "Affordable 1 bedroom flat in NW1.",
-      "longDescription": "A compact but well-located 1 bedroom flat, perfect for first-time buyers.",
-      "images": ["property4_1.jpg", "property4_2.jpg", "property4_3.jpg", "property4_4.jpg", "property4_5.jpg", "property4_6.jpg"],
-      "floorPlanImage": "floorplan4.png",
-      "coordinates": {"lat": 51.530000, "lng": -0.120000}
-    },
-    {
-      "id": 5,
-      "type": "house",
-      "price": 1000000,
-      "bedrooms": 5,
-      "dateAdded": "2024-07-01",
-      "postcode": "BR1",
-      "shortDescription": "Luxury 5 bedroom house in BR1.",
-      "longDescription": "An elegant 5 bedroom mansion with extensive grounds.",
-      "images": ["property5_1.jpg", "property5_2.jpg", "property5_3.jpg", "property5_4.jpg", "property5_5.jpg", "property5_6.jpg"],
-      "floorPlanImage": "floorplan5.png",
-      "coordinates": {"lat": 51.410000, "lng": 0.020000}
-    },
-    {
-      "id": 6,
-      "type": "flat",
-      "price": 450000,
+      "id": "prop2",
+      "type": "Flat",
       "bedrooms": 2,
-      "dateAdded": "2024-09-25",
-      "postcode": "NW1",
-      "shortDescription": "Bright 2 bedroom flat in NW1.",
-      "longDescription": "A bright and airy flat, recently renovated.",
-      "images": ["property6_1.jpg", "property6_2.jpg", "property6_3.jpg", "property6_4.jpg", "property6_5.jpg", "property6_6.jpg"],
-      "floorPlanImage": "floorplan6.png",
-      "coordinates": {"lat": 51.528500, "lng": -0.130000}
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+      "location": "Crofton Road Orpington BR6",
+      "picture": "images/prop2/main.jpg",
+      "url": "properties/prop2.html",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      }
     },
     {
-      "id": 7,
-      "type": "house",
-      "price": 600000,
+      "id": "prop3",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 580000,
+      "tenure": "Leasehold",
+      "description": "A stunning two-bedroom flat located in the heart of the city with a spacious open-plan living area, modern kitchen, and breathtaking views of the skyline. Features include an en-suite master bedroom, a private balcony, and secure underground parking. The property is within walking distance of shops, restaurants, and excellent transport links.",
+      "location": "High Street, City Centre, London EC1",
+      "picture": "/images/prop3/main.jpg",
+      "url": "properties/prop3.html",
+      "added": {
+        "month": "November",
+        "day": 5,
+        "year": 2023
+      }
+    },
+    {
+      "id": "prop4",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 850000,
+      "tenure": "Freehold",
+      "description": "A beautiful four-bedroom house nestled in a peaceful countryside setting. This charming property features exposed wooden beams, a large fireplace, and a landscaped garden with a pond. Ideal for families seeking tranquility, the house is a short drive from local schools and amenities.",
+      "location": "Willow Lane, Cotswolds, GL7",
+      "picture": "/images/prop4/main.jpg",
+      "url": "properties/prop4.html",
+      "added": {
+        "month": "August",
+        "day": 21,
+        "year": 2023
+      }
+    },
+    {
+      "id": "prop5",
+      "type": "House",
       "bedrooms": 3,
-      "dateAdded": "2024-09-30",
-      "postcode": "BR1",
-      "shortDescription": "Newly refurbished 3 bedroom house in BR1.",
-      "longDescription": "A newly refurbished house with modern interiors and close to schools.",
-      "images": ["property7_1.jpg", "property7_2.jpg", "property7_3.jpg", "property7_4.jpg", "property7_5.jpg", "property7_6.jpg"],
-      "floorPlanImage": "floorplan7.png",
-      "coordinates": {"lat": 51.407900, "lng": 0.023500}
+      "price": 425000,
+      "tenure": "Freehold",
+      "description": "A cozy three-bedroom house with a spacious garden, modern interiors, and a large driveway. This property is perfect for downsizers or families looking for single-floor living. Located in a friendly neighborhood with easy access to parks, shops, and public transport.",
+      "location": "Oak Avenue, Bournemouth BH8",
+      "picture": "/images/prop5/main.jpg",
+      "url": "properties/prop5.html",
+      "added": {
+        "month": "July",
+        "day": 10,
+        "year": 2023
+      }
+    },
+    {
+      "id": "prop6",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 1200000,
+      "tenure": "Leasehold",
+      "description": "A luxurious three-bedroom flat with floor-to-ceiling windows, a private terrace, and a panoramic view of the river. Features include a designer kitchen, smart home integration, and access to a rooftop swimming pool. Located in an exclusive development near premium dining and shopping options.",
+      "location": "Riverside Drive, Chelsea SW3",
+      "picture": "/images/prop6/main.jpg",
+      "url": "properties/prop6.html",
+      "added": {
+        "month": "October",
+        "day": 15,
+        "year": 2023
+      }
+    },
+    {
+      "id": "prop7",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 1450000,
+      "tenure": "Freehold",
+      "description": "An exquisite five-bedroom house featuring a grand entrance hall, a state-of-the-art kitchen, and a spacious family room. The property includes a large garden, a garage, and a separate guest suite. Situated in a sought-after area, close to top-rated schools and commuter links.",
+      "location": "Elmwood Close, Surrey KT12",
+      "picture": "/images/prop7/main.jpg",
+      "url": "properties/prop7.html",
+      "added": {
+        "month": "September",
+        "day": 30,
+        "year": 2023
+      }
     }
   ]
-  
+}
