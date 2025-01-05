@@ -17,14 +17,24 @@ body {
   background-color: #f8fafc;
   color: #1e293b;
   padding-top: 80px;
-  flex-grow: 1;
-  height: 100dvh;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+/* Main content wrapper */
+.main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navbar Styling */
@@ -466,9 +476,8 @@ nav button:hover {
   color: #fff;
   padding: 1.5rem;
   text-align: center;
-  position: static;
-  bottom: 0;
-  top: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .footer-content {

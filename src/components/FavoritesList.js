@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 
-export default function FavoritesList({ favourites, removeFavourite, clearFavourites, addFavourite }) {
-
+export default function FavoritesList({
+  favourites,
+  removeFavourite,
+  clearFavourites,
+  addFavourite,
+}) {
   const handleDrop = (e) => {
     e.preventDefault();
-    const data = e.dataTransfer.getData('text/plain');
+    const data = e.dataTransfer.getData("text/plain");
     if (data) {
       const prop = JSON.parse(data);
       addFavourite(prop);
@@ -17,13 +21,21 @@ export default function FavoritesList({ favourites, removeFavourite, clearFavour
 
   return (
     <div>
-      <div className="favorites-list" onDragOver={allowDrop} onDrop={handleDrop}>
-        {favourites.map(f => (
-          <div className="fav-item" key={f.id}
+      <div
+        className="favorites-list"
+        onDragOver={allowDrop}
+        onDrop={handleDrop}
+      >
+        {favourites.map((f) => (
+          <div
+            className="fav-item"
+            key={f.id}
             draggable={true}
-            onDragStart={(e) => e.dataTransfer.setData('text/plain', JSON.stringify(f))}
+            onDragStart={(e) =>
+              e.dataTransfer.setData("text/plain", JSON.stringify(f))
+            }
           >
-            {f.shortDescription}
+            {f.description}
             <button onClick={() => removeFavourite(f.id)}>Remove</button>
           </div>
         ))}
