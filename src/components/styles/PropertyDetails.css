@@ -1,24 +1,207 @@
-.property-details-container {
-    padding: 20px;
+Global Container .property-details-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  gap: 40px;
+  background-color: #f8f9fa;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+  padding: 1.5rem 2rem !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  margin: 0;
+}
+
+/* Images Section */
+.property-details-images {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.property-details-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.image-navigation button {
+  background: #2a5298;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.image-navigation button:hover {
+  background: #1e3c72;
+}
+
+/* Property Info Section */
+.property-details-info {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Price Styling */
+.property-details-info h2 {
+  font-size: 2.5rem;
+  color: #1e3c72;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+/* Property Features */
+.property-features {
+  margin: 20px 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.property-features p {
+  margin: 10px 0;
+  color: #4a5568;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Tabs Styling */
+.property-tabs {
+  margin-top: 25px;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 2px solid #edf2f7;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.react-tabs__tab {
+  padding: 12px 0;
+  color: #4a5568;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.react-tabs__tab--selected {
+  color: #2a5298;
+  font-weight: 500;
+}
+
+.react-tabs__tab--selected::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2a5298;
+}
+
+.react-tabs__tab-panel {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+/* Description Text */
+.react-tabs__tab-panel p {
+  margin: 0;
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.image-navigation {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+.button {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Map Styling */
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .property-details-container {
+    flex-direction: column;
   }
-  
-  .main-image {
+
+  .property-details-images,
+  .property-details-info {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 20px;
   }
-  
-  .details-content {
-    margin-bottom: 20px;
-  }
-  
-  .property-tabs h3 {
-    margin-top: 15px;
-  }
-  
-  iframe {
-    border: none;
-    border-radius: 8px;
-  }
-  
+}
+
+/* Additional Utility Classes */
+.text-muted {
+  color: #718096;
+}
+
+.feature-label {
+  font-weight: 500;
+  color: #2d3748;
+}

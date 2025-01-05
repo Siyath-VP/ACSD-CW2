@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 // import propertiesData from '../../public/properties.json';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import "./styles/PropertyDetails.css";
 
 export default function PropertyDetails() {
   const { id } = useParams();
@@ -15,14 +16,14 @@ export default function PropertyDetails() {
   // }, [id]);
 
   // - import propertiesData from '../../public/properties.json';
-useEffect(() => {
-  fetch('/properties.json')
-    .then(res => res.json())
-    .then(data => {
-      const p = data.find(pr => pr.id === parseInt(id));
-      setProperty(p);
-    });
-}, [id]);
+  useEffect(() => {
+    fetch("/properties.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const p = data.properties.find((pr) => pr.id === id);
+        setProperty(p);
+      });
+  }, [id]);
 
   if (!property) return <div>Loading...</div>;
 
@@ -31,29 +32,45 @@ useEffect(() => {
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((currentImageIndex - 1 + property.images.length) % property.images.length);
+    setCurrentImageIndex(
+      (currentImageIndex - 1 + property.images.length) % property.images.length
+    );
+  };
+
+  const images = {
+    // mainimage: `/img/${id}.jpg`,
+    livingroom: `/images/${id}/livingroom.jpg`,
+    kitchen: `/images/${id}/kitchen.jpg`,
+    bedroom: `/images/${id}/bedroom.jpg`,
+    bathroom: `/images/${id}/bathroom.jpg`,
   };
 
   return (
     <div>
-      <header style={{ background: '#333', color:'#fff', padding:'1rem' }}>
-        <h1>{property.shortDescription}</h1>
+      <header style={{ background: "#333", color: "#fff", padding: "1rem" }}>
+        <h1>{property.type}</h1>
       </header>
       <div className="property-details-container">
         <div className="property-details-images">
-          <div style={{ textAlign: 'center' }}>
-            <img src={`../images/${property.images[currentImageIndex]}`} alt="Property" style={{ maxWidth: '400px' }} />
+          <div style={{ textAlign: "center" }}>
+            <img
+              src={property.picture}
+              alt="Property"
+              style={{ maxWidth: "400px" }}
+            />
           </div>
-          <div style={{ marginTop: '1rem', textAlign:'center' }}>
-            <button onClick={prevImage}>Prev</button>
-            <button onClick={nextImage}>Next</button>
+          <div className="image-navigation">
+            <div className="button">
+              <button onClick={prevImage}>Prev</button>
+              <button onClick={nextImage}>Next</button>
+            </div>
           </div>
         </div>
         <div className="property-details-info">
           <h2>£{property.price}</h2>
           <p>Type: {property.type}</p>
           <p>Bedrooms: {property.bedrooms}</p>
-          <p>Postcode: {property.postcode}</p>
+          <p>Location: {property.location}</p>
           <Tabs className="property-tabs">
             <TabList>
               <Tab>Description</Tab>
@@ -62,10 +79,14 @@ useEffect(() => {
             </TabList>
 
             <TabPanel>
-              <p>{property.longDescription}</p>
+              <p>{property.description}</p>
             </TabPanel>
             <TabPanel>
-              <img src={`../images/${property.floorPlanImage}`} alt="Floor Plan" style={{ maxWidth: '400px' }} />
+              <img
+                src="/images/Hero-img.jpg"
+                alt="Floor Plan"
+                style={{ maxWidth: "400px" }}
+              />
             </TabPanel>
             <TabPanel>
               {/* A Google map iframe showing coordinates */}
@@ -73,8 +94,10 @@ useEffect(() => {
                 title="Property Location"
                 width="400"
                 height="300"
-                style={{ border:0 }}
-                src={`https://www.google.com/maps?q=${property.coordinates.lat},${property.coordinates.lng}&hl=es;z=14&output=embed`}
+                style={{ border: 0 }}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  property.location
+                )}&output=embed`}
                 allowFullScreen
               ></iframe>
             </TabPanel>
