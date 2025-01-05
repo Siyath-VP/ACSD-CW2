@@ -1,3 +1,13 @@
+/**
+ * FavoritesList component renders a list of favorite items with drag-and-drop functionality.
+ *
+ * @param {Object[]} favourites - Array of favorite items.
+ * @param {Function} removeFavourite - Function to remove a favorite item by its id.
+ * @param {Function} clearFavourites - Function to clear all favorite items.
+ * @param {Function} addFavourite - Function to add a new favorite item.
+ * @returns {JSX.Element} The rendered component.
+ */
+
 import React from "react";
 
 export default function FavoritesList({
