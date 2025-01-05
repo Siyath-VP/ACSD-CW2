@@ -127,7 +127,7 @@ nav button:hover {
   z-index: 2;
   max-width: 800px;
   text-align: right;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 /* .hero-text h1 {
@@ -517,5 +517,19 @@ nav button:hover {
 @media (max-width: 480px) {
   .property-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem; /* Reduce padding */
+  }
+
+  nav ul {
+    gap: 0.5rem; /* Reduce gap between items */
+  }
+
+  nav li a {
+    font-size: 0.9rem; /* Reduce font size */
   }
 }

@@ -1,3 +1,13 @@
+/**
+ * Footer component that displays contact information and copyright notice.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Footer />
+ * )
+ */
+
 import React from "react";
 
 const Footer = () => {

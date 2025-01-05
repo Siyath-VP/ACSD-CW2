@@ -1,3 +1,12 @@
+/**
+ * Navbar component that displays a navigation bar with links and a toggle button.
+ *
+ * @param {Object} props - The component props.
+ * @param {Function} props.toggleSidebar - Function to toggle the sidebar.
+ *
+ * @returns {JSX.Element} The rendered Navbar component.
+ */
+
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";

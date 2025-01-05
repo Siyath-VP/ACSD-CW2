@@ -1,21 +1,31 @@
+/**
+ * PropertyDetails component fetches and displays detailed information about a property.
+ * It includes a gallery of images, property details, and tabs for description, floor plan, and map.
+ *
+ * @component
+ * @example
+ * return (
+ *   <PropertyDetails />
+ * )
+ */
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import propertiesData from '../../public/properties.json';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "./styles/PropertyDetails.css";
 
-export default function PropertyDetails() {
+/**
+ * PropertyDetails component
+ *
+ * @returns {JSX.Element} The rendered component
+ */
+
+const PropertyDetails = () => {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState("mainimage");
 
-  // useEffect(() => {
-  //   const p = propertiesData.find(pr => pr.id === parseInt(id));
-  //   setProperty(p);
-  // }, [id]);
-
-  // - import propertiesData from '../../public/properties.json';
   useEffect(() => {
     fetch("/properties.json")
       .then((res) => res.json())
@@ -27,22 +37,20 @@ export default function PropertyDetails() {
 
   if (!property) return <div>Loading...</div>;
 
-  const nextImage = () => {
-    setCurrentImageIndex((currentImageIndex + 1) % property.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (currentImageIndex - 1 + property.images.length) % property.images.length
-    );
-  };
-
   const images = {
-    // mainimage: `/img/${id}.jpg`,
+    mainimage: `/images/${id}/main.jpg`,
     livingroom: `/images/${id}/livingroom.jpg`,
     kitchen: `/images/${id}/kitchen.jpg`,
     bedroom: `/images/${id}/bedroom.jpg`,
     bathroom: `/images/${id}/bathroom.jpg`,
+  };
+
+  const imageLabels = {
+    mainimage: "House",
+    livingroom: "Living Room",
+    kitchen: "Kitchen",
+    bedroom: "Bedroom",
+    bathroom: "Bathroom",
   };
 
   return (
@@ -51,19 +59,30 @@ export default function PropertyDetails() {
         <h1>{property.type}</h1>
       </header>
       <div className="property-details-container">
-        <div className="property-details-images">
-          <div style={{ textAlign: "center" }}>
+        <div className="property-gallery">
+          <div className="gallery-main">
             <img
-              src={property.picture}
-              alt="Property"
-              style={{ maxWidth: "400px" }}
+              src={images[selectedImage]}
+              alt={imageLabels[selectedImage]}
+              className="main-image"
             />
           </div>
-          <div className="image-navigation">
-            <div className="button">
-              <button onClick={prevImage}>Prev</button>
-              <button onClick={nextImage}>Next</button>
-            </div>
+          <div className="gallery-thumbnails">
+            {Object.entries(images).map(([key, src]) => (
+              <div
+                key={key}
+                className={`thumbnail-container ${
+                  selectedImage === key ? "selected" : ""
+                }`}
+                onClick={() => setSelectedImage(key)}
+              >
+                <img
+                  src={src}
+                  alt={imageLabels[key]}
+                  className="thumbnail-image"
+                />
+              </div>
+            ))}
           </div>
         </div>
         <div className="property-details-info">
@@ -83,13 +102,12 @@ export default function PropertyDetails() {
             </TabPanel>
             <TabPanel>
               <img
-                src="/images/Hero-img.jpg"
+                src="/images/floorplans/prop1.jpg"
                 alt="Floor Plan"
                 style={{ maxWidth: "400px" }}
               />
             </TabPanel>
             <TabPanel>
-              {/* A Google map iframe showing coordinates */}
               <iframe
                 title="Property Location"
                 width="400"
@@ -106,4 +124,6 @@ export default function PropertyDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default PropertyDetails;
