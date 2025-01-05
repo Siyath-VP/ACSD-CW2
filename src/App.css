@@ -7,6 +7,7 @@
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -16,6 +17,14 @@ body {
   background-color: #f8fafc;
   color: #1e293b;
   padding-top: 80px;
+  flex-grow: 1;
+  height: 100dvh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Navbar Styling */
@@ -255,7 +264,7 @@ nav button:hover {
   transform: scale(1.05);
 }
 
-.favorite-button {
+/* .favorite-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -275,6 +284,91 @@ nav button:hover {
 
 .favorite-button:hover {
   transform: scale(1.1);
+} */
+
+/* Add to App.css */
+.favorites-section {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 1.5rem;
+}
+
+.favorites-section h3 {
+  font-size: 1.5rem;
+  color: #1e40af;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: all 0.2s ease;
+}
+
+.favorite-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.favorite-item img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.favorite-item-content {
+  flex: 1;
+}
+
+.favorite-item-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.favorite-item-price {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.favorite-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.favorite-item button:hover {
+  background: #dc2626;
+}
+
+.clear-favorites {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #94a3b8;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clear-favorites:hover {
+  background: #64748b;
 }
 
 .property-card .content {
@@ -345,7 +439,7 @@ nav button:hover {
   background: #1d4ed8;
 }
 
-.favorite-btn {
+/* .favorite-btn {
   background: white;
   color: #2563eb;
   border: 1px solid #2563eb;
@@ -353,7 +447,7 @@ nav button:hover {
 
 .favorite-btn:hover {
   background: #f8fafc;
-}
+} */
 
 /* .footer {
   text-align: center;
@@ -372,6 +466,9 @@ nav button:hover {
   color: #fff;
   padding: 1.5rem;
   text-align: center;
+  position: static;
+  bottom: 0;
+  top: 100%;
 }
 
 .footer-content {

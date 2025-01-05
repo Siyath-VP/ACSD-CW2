@@ -138,31 +138,35 @@ export default function App() {
                   </form>
                   <div className="favorites-section">
                     <h3>Favourites</h3>
-                    {favourites.map((property, index) => (
-                      <div
-                        key={index}
-                        className="property-card"
-                        draggable
-                        onDragStart={(e) =>
-                          e.dataTransfer.setData(
-                            "text/plain",
-                            JSON.stringify(property)
-                          )
-                        }
-                      >
-                        <p>
-                          {property.type ||
-                            property.name ||
-                            "No description available"}
-                        </p>{" "}
-                        {/* Use name or description */}
+                    {favourites.map((property) => (
+                      <div key={property.id} className="favorite-item">
+                        <img
+                          src={property.picture}
+                          alt={property.type}
+                          onError={(e) => {
+                            e.target.src = "/placeholder-property.jpg"; // Fallback image
+                          }}
+                        />
+                        <div className="favorite-item-content">
+                          <div className="favorite-item-title">
+                            {property.type}
+                          </div>
+                          <div className="favorite-item-price">
+                            £{property.price.toLocaleString()}
+                          </div>
+                        </div>
                         <button onClick={() => removeFavourite(property.id)}>
                           Remove
                         </button>
                       </div>
                     ))}
                     {favourites.length > 0 && (
-                      <button onClick={clearFavourites}>Clear All</button>
+                      <button
+                        className="clear-favorites"
+                        onClick={clearFavourites}
+                      >
+                        Clear All
+                      </button>
                     )}
                   </div>
                 </div>
@@ -182,7 +186,7 @@ export default function App() {
                   style={{ padding: "2rem", marginTop: "1rem" }}
                 >
                   <div className="results-section">
-                    <h2 className="results-heading">Results</h2>
+                    <h2 className="results-heading">Properties</h2>
                     <PropertyList
                       criteria={searchCriteria}
                       addFavourite={addFavourite}
